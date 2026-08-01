@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="GS Solar roofline mark">
+  <defs>
+    <linearGradient id="rl-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFC730"/>
+      <stop offset="1" stop-color="#F5B301"/>
+    </linearGradient>
+    <clipPath id="rl-above"><rect x="0" y="0" width="96" height="52"/></clipPath>
+  </defs>
+  <!-- sun rising, clipped to sit behind the roofline -->
+  <g clip-path="url(#rl-above)">
+    <g stroke="#F5B301" stroke-width="4" stroke-linecap="round">
+      <line x1="48" y1="4" x2="48" y2="14"/>
+      <line x1="24" y1="14" x2="30" y2="20"/>
+      <line x1="72" y1="14" x2="66" y2="20"/>
+      <line x1="12" y1="34" x2="20" y2="36"/>
+      <line x1="84" y1="34" x2="76" y2="36"/>
+    </g>
+    <circle cx="48" cy="46" r="18" fill="url(#rl-sun)"/>
+  </g>
+  <!-- roof / panel chevron -->
+  <path d="M14 66 L48 40 L82 66" fill="none" stroke="#0B3320" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- panel rows under the roofline -->
+  <path d="M22 72 L48 52 L74 72 L74 82 L22 82 Z" fill="#14532D"/>
+  <g stroke="#FAF9F5" stroke-width="2" stroke-linecap="round" opacity="0.85">
+    <line x1="48" y1="52" x2="48" y2="82"/>
+    <line x1="30" y1="77" x2="66" y2="77"/>
+  </g>
+</svg>

@@ -1,93 +1,50 @@
-# Landing_Page
+# GS Solar — Website
 
+Premium marketing site + portfolio for **GS Solar Energy System Pvt Ltd**, Chennai.
+Editorial light + forest-green + solar-gold aesthetic, cinematic scroll, one WebGL
+hero and GSAP/CSS faux-3D throughout. Full plan: [`docs/PLAN.md`](docs/PLAN.md).
 
+## Stack
 
-## Getting started
+Next.js 16 (App Router, TS) · Tailwind CSS v4 (CSS-first tokens) · Lenis smooth-scroll ·
+GSAP + ScrollTrigger · Framer Motion · React Three Fiber (hero) · shadcn-style Radix
+UI · react-hook-form + zod · lucide-react · Fraunces / Geist / Geist Mono via `next/font`.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Run
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-* [Create](https://docs.gitlab.com/user/project/repository/web_editor/#create-a-file) or [upload](https://docs.gitlab.com/user/project/repository/web_editor/#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
-
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
+npm run start    # serve the production build
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/cypherx_client/gs-solar-energy-system-pvt-ltd/landing_page.git
-git branch -M main
-git push -uf origin main
-```
 
-## Integrate with your tools
+## Key routes (current)
 
-* [Set up project integrations](https://gitlab.com/cypherx_client/gs-solar-energy-system-pvt-ltd/landing_page/-/settings/integrations)
+| Route     | Status |
+|-----------|--------|
+| `/`       | Phase-1 branded hero (WebGL hero + all 21 sections land in Phase 2) |
+| `/brand`  | Logo & palette review — **pick the primary logo here** |
 
-## Collaborate with your team
+## Structure
 
-* [Invite team members and collaborators](https://docs.gitlab.com/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/user/project/merge_requests/creating_merge_requests/)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/user/project/issues/managing_issues/#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+- `src/content/*` — all copy/data, separated from UI. Real company data is seeded;
+  placeholders are marked `placeholder: true` / `// TODO` (see `docs/PLAN.md` §16 for
+  the content still needed from the client).
+- `src/components/{layout,ui}` — layout shell (Navbar, Footer, QuoteModal, SmoothScroll)
+  and shadcn-style primitives.
+- `src/lib/*` — fonts, gsap setup, hooks, zod schemas, `cn()` util.
+- `public/logos/*` — 3 original logo concepts (sun-panel · sunburst · roofline), each as
+  lockup + mark, plus a favicon. Selected primary set in `src/components/layout/Logo.tsx`.
 
-## Test and Deploy
+## Design tokens
 
-Use the built-in continuous integration in GitLab.
+Single source of truth is the `@theme` block in `src/app/globals.css` (mirrors
+`docs/PLAN.md` §2). Gold is a **graphic** colour only — never small text.
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/topics/autodevops/requirements/)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ci/environments/protected_environments/)
+## Build phases
 
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+1. **Foundation** ✅ — scaffold, tokens, fonts, content layer, 3 logos, layout shell.
+2. **Landing page** — WebGL hero + all sections incl. calculator & animated explainer.
+3. **Secondary pages** — About, Services, Projects, Subsidy, Contact, Blog.
+4. **Polish** — animation/responsive/a11y/perf passes.

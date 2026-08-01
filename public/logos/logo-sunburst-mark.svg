@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="GS Solar sunburst mark">
+  <defs>
+    <linearGradient id="sb-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFC730"/>
+      <stop offset="1" stop-color="#F5B301"/>
+    </linearGradient>
+    <clipPath id="sb-horizon">
+      <rect x="0" y="0" width="96" height="60"/>
+    </clipPath>
+  </defs>
+  <!-- rays + sun, clipped above the horizon -->
+  <g clip-path="url(#sb-horizon)">
+    <!-- fanned rays -->
+    <g fill="#F5B301">
+      <path d="M48 60 L40 8 L56 8 Z" opacity="0.95"/>
+      <path d="M48 60 L18 20 L30 12 Z" opacity="0.75"/>
+      <path d="M48 60 L78 20 L66 12 Z" opacity="0.75"/>
+      <path d="M48 60 L6 40 L12 28 Z" opacity="0.55"/>
+      <path d="M48 60 L90 40 L84 28 Z" opacity="0.55"/>
+    </g>
+    <!-- sun core -->
+    <circle cx="48" cy="60" r="20" fill="url(#sb-sun)"/>
+  </g>
+  <!-- horizon line -->
+  <rect x="8" y="58" width="80" height="5" rx="2.5" fill="#14532D"/>
+  <rect x="20" y="70" width="56" height="5" rx="2.5" fill="#2E8B57" opacity="0.8"/>
+  <rect x="34" y="82" width="28" height="5" rx="2.5" fill="#3FA96A" opacity="0.6"/>
+</svg>
