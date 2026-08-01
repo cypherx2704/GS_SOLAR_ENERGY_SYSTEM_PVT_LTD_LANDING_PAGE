@@ -1,0 +1,584 @@
+Complete Website Structure
+Home (Landing Page)
+│
+├── About Us
+├── Services
+├── Projects / Portfolio
+├── Industries We Serve
+├── Why Choose Us
+├── Solar Calculator
+├── Process
+├── Testimonials
+├── Certifications
+├── FAQs
+├── Blog
+├── Contact
+└── Quote Request
+Landing Page Blueprint
+1. Navigation Bar
+Logo
+
+Home
+About
+Services
+Projects
+Calculator
+Testimonials
+Contact
+
+Get Free Quote (CTA)
+
+Sticky navigation.
+
+2. Hero Section
+
+This is the first thing users see.
+
+Large background image/video.
+
+Left Side
+Power Your Future with Clean Solar Energy
+
+Reduce Electricity Bills by up to 90%
+
+Residential • Commercial • Industrial
+
+[Get Free Quote]
+
+[Call Now]
+Right Side
+Solar Installation Image
+
+OR
+
+Savings Calculator Preview
+
+Below Hero
+
+★★★★★ 500+ Happy Customers
+
+25 MW Installed
+
+10 Years Experience
+
+500+ Projects
+
+24/7 Support
+3. Trust Strip
+
+Logos
+
+MNRE
+
+ISO Certified
+
+Approved Vendor
+
+Government Subsidy
+
+Authorized Dealer
+4. About Company
+Who We Are
+
+Company Story
+
+Mission
+
+Vision
+
+Years in Business
+
+Why we started
+
+Image of company/team.
+
+5. Why Solar?
+
+Explain
+
+Lower Bills
+
+Government Subsidy
+
+Low Maintenance
+
+Eco Friendly
+
+Increase Property Value
+
+25 Year Lifespan
+
+Icons.
+
+6. Services
+
+Cards.
+
+Residential Solar
+
+Commercial Solar
+
+Industrial Solar
+
+On Grid
+
+Off Grid
+
+Hybrid Solar
+
+Solar Water Pump
+
+Solar Street Lights
+
+AMC
+
+Maintenance
+
+Cleaning
+
+Battery Backup
+
+Each card
+
+Image
+
+Description
+
+Know More
+7. Why Choose Us
+
+Cards.
+
+✔ Experienced Engineers
+
+✔ Premium Panels
+
+✔ Fast Installation
+
+✔ 25-Year Warranty
+
+✔ Government Subsidy Assistance
+
+✔ Financing Available
+
+✔ Remote Monitoring
+
+✔ After Sales Support
+8. Our Process
+
+Timeline
+
+1 Consultation
+
+↓
+
+2 Site Survey
+
+↓
+
+3 Design
+
+↓
+
+4 Government Approval
+
+↓
+
+5 Installation
+
+↓
+
+6 Testing
+
+↓
+
+7 Monitoring
+
+↓
+
+8 Maintenance
+9. Solar Savings Calculator
+
+Input
+
+Monthly Bill
+
+City
+
+Roof Type
+
+Roof Size
+
+Output
+
+System Size
+
+Estimated Savings
+
+Payback Period
+
+CO₂ Reduction
+
+Government Subsidy
+
+Very attractive section.
+
+10. Portfolio / Projects
+
+Grid.
+
+Each project contains
+
+Image
+
+Location
+
+Capacity
+
+Customer
+
+Completion Date
+
+Annual Savings
+
+Panels Used
+
+Inverter
+
+View Details
+
+Example
+
+ABC Textile Industry
+
+250 kW
+
+Coimbatore
+
+₹18 Lakhs Annual Savings
+11. Before vs After
+
+Slider
+
+Roof Before
+
+↓
+
+Roof After Installation
+12. Industries Served
+Homes
+
+Factories
+
+Schools
+
+Hospitals
+
+Hotels
+
+Apartments
+
+Warehouses
+
+Farms
+
+Retail Stores
+
+Office Buildings
+13. Products
+Solar Panels
+
+Inverters
+
+Battery
+
+Mounting Structures
+
+EV Chargers
+
+Monitoring System
+14. Brands You Work With
+Waaree
+
+Adani
+
+Tata Power Solar
+
+Luminous
+
+Sungrow
+
+Growatt
+
+Havells
+
+Microtek
+15. Testimonials
+
+Cards
+
+Customer Photo
+
+★★★★★
+
+Review
+
+Location
+
+Video testimonials are even better.
+
+16. Statistics
+
+Animated counters.
+
+1000+
+
+Projects
+
+50 MW+
+
+Installed
+
+₹20 Crore+
+
+Customer Savings
+
+5000 Tons
+
+CO₂ Reduced
+17. Government Subsidy
+
+Explain
+
+Eligibility
+
+Process
+
+Documents
+
+Benefits
+
+Apply Now
+18. FAQs
+
+Accordion
+
+How much does solar cost?
+
+What is subsidy?
+
+How long is installation?
+
+Warranty?
+
+Maintenance?
+
+ROI?
+
+Can it work during power cuts?
+19. Call To Action
+
+Large section
+
+Ready to Save on Electricity?
+
+Get Your Free Site Survey
+
+[Request Quote]
+20. Contact
+Phone
+
+Email
+
+Office
+
+Google Maps
+
+Business Hours
+
+WhatsApp
+21. Footer
+Quick Links
+
+Services
+
+Products
+
+Projects
+
+Careers
+
+Privacy Policy
+
+Terms
+
+Social Media
+
+Newsletter
+Portfolio Page Structure
+Hero Banner
+
+↓
+
+Company Introduction
+
+↓
+
+Featured Projects
+
+↓
+
+Project Categories
+
+↓
+
+Individual Case Studies
+
+↓
+
+Gallery
+
+↓
+
+Client Testimonials
+
+↓
+
+Certifications
+
+↓
+
+Awards
+
+↓
+
+Contact CTA
+Individual Project Page
+Project Name
+
+Client
+
+Location
+
+Capacity
+
+Completion Date
+
+Project Cost
+
+System Type
+
+Panels Used
+
+Inverter Used
+
+Annual Generation
+
+Annual Savings
+
+ROI
+
+Carbon Offset
+
+Challenges
+
+Solution
+
+Gallery
+
+Customer Review
+About Page
+Company Story
+
+Founder Message
+
+Mission
+
+Vision
+
+Values
+
+Our Team
+
+Certifications
+
+Infrastructure
+
+Office
+
+Warehouse
+
+Timeline
+
+Achievements
+Services Page
+
+For every service
+
+Overview
+
+Benefits
+
+Working Principle
+
+Suitable For
+
+Process
+
+Pricing (Optional)
+
+FAQs
+
+Request Quote
+Contact Page
+Inquiry Form
+
+Google Map
+
+Phone
+
+WhatsApp
+
+Email
+
+Office Photos
+
+Working Hours
+Blog Page
+
+Topics like
+
+Solar Subsidy Guide
+
+How Solar Works
+
+Best Solar Panels
+
+Residential vs Commercial
+
+Maintenance Tips
+
+Government Schemes
+
+ROI Calculator
+
+Solar Myths
+
+_____________________________________
+i am creating a webpage for solar business the details are provided in the Details.md in Company Details\Details.md, based on the above structure i want you to create a complete landing page, i want the landing page to have some 3D UI components just like in the website -> https://noomoagency.com/, i want the landing page to be similar to this webpage
+
+if there are any information missing ask me, if i have that info ill provide and if not create a place holder for that and ill give the contents in the future.
+
+i want this website to have both the landign page for the business and also the portflio for the given names, the company is based on the india, so i want you to say the benifits of the govt schemens and also a step by step guide to apply that
+
+dont add the solar products on your own only use the products from the Details.md, you can only add content that says about the busineess not the products used.
+
+also attach a video on how solar eregy is used, dont add youtube video, if u cant add say me the correct video ill download and give it to you,i want annimation and 3D but with a profetional manner.
+
+use profetional colour and maintain the same accross the webpage
+
+create a logo realate to solar and store it in the logos folder(create one), i want 3 logos in profetional format and it should be unique not used anywhere.
+
+first step thinks of a proper way to arrange the website and decide how the website should be build, then once that is completed we can start building the website.
+
+stack - next.js
