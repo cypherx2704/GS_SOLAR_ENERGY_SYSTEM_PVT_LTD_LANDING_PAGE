@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="GS Solar">
+  <rect width="64" height="64" rx="14" fill="#0B3320"/>
+  <g fill="#F5B301">
+    <rect x="30" y="8"  width="4" height="7" rx="2"/>
+    <rect x="30" y="8"  width="4" height="7" rx="2" transform="rotate(45 32 22)"/>
+    <rect x="30" y="8"  width="4" height="7" rx="2" transform="rotate(-45 32 22)"/>
+  </g>
+  <circle cx="32" cy="24" r="10" fill="#FFC730"/>
+  <path d="M18 40 L46 40 L52 54 L12 54 Z" fill="#3FA96A"/>
+  <g stroke="#0B3320" stroke-width="2" stroke-linecap="round">
+    <line x1="32" y1="40" x2="32" y2="54"/>
+    <line x1="18" y1="47" x2="46" y2="47"/>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-label="GS Solar">
+  <defs>
+    <linearGradient id="sbl-sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFC730"/>
+      <stop offset="1" stop-color="#F5B301"/>
+    </linearGradient>
+    <clipPath id="sbl-horizon"><rect x="0" y="0" width="96" height="60"/></clipPath>
+  </defs>
+  <g clip-path="url(#sbl-horizon)">
+    <g fill="#F5B301">
+      <path d="M48 60 L40 8 L56 8 Z" opacity="0.95"/>
+      <path d="M48 60 L18 20 L30 12 Z" opacity="0.75"/>
+      <path d="M48 60 L78 20 L66 12 Z" opacity="0.75"/>
+      <path d="M48 60 L6 40 L12 28 Z" opacity="0.55"/>
+      <path d="M48 60 L90 40 L84 28 Z" opacity="0.55"/>
+    </g>
+    <circle cx="48" cy="60" r="20" fill="url(#sbl-sun)"/>
+  </g>
+  <rect x="8" y="58" width="80" height="5" rx="2.5" fill="#14532D"/>
+  <rect x="20" y="70" width="56" height="5" rx="2.5" fill="#2E8B57" opacity="0.8"/>
+  <rect x="34" y="82" width="28" height="5" rx="2.5" fill="#3FA96A" opacity="0.6"/>
+  <text x="108" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" letter-spacing="0.5" fill="#14532D">GS <tspan fill="#0B3320">Solar</tspan></text>
+  <text x="110" y="74" font-family="ui-monospace, 'SFMono-Regular', Menlo, monospace" font-size="11.5" letter-spacing="4.5" fill="#8A8A82">ENERGY SYSTEMS</text>
+</svg>
