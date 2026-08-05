@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { MoveHorizontal, Sun } from "lucide-react";
+import { MoveHorizontal } from "lucide-react";
 import { SectionHeading } from "./Section";
+import { RoofScene } from "./RoofScene";
 import { Reveal } from "@/components/animation/Reveal";
 
-/** Draggable before/after comparison slider (placeholder imagery, PLAN §6 #11). */
+/** Draggable before/after comparison of the same roof, drawn as an illustration. */
 export function BeforeAfter() {
   const [pos, setPos] = React.useState(50);
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -37,7 +38,7 @@ export function BeforeAfter() {
           eyebrow="Before / After"
           title="A rooftop,"
           accent="transformed."
-          description="Drag to compare a bare roof with one working for you. (Real project photos will replace these placeholders.)"
+          description="The same slab, twice. On the left it is dead space you still pay a full grid bill to live under. On the right it is a 25-year generating asset. Drag the handle to compare — illustration, not a project photo."
           align="center"
         />
 
@@ -51,22 +52,23 @@ export function BeforeAfter() {
             }}
           >
             {/* AFTER (base layer) */}
-            <div className="absolute inset-0 bg-gradient-to-br from-green-700 to-green-900">
-              <div className="absolute inset-0 grid place-items-center text-canvas/70">
-                <div className="text-center">
-                  <Sun className="mx-auto size-8 text-gold-400" />
-                  <p className="mt-2 font-mono text-xs uppercase tracking-widest">After · panels installed</p>
-                </div>
-              </div>
+            <div className="absolute inset-0">
+              <RoofScene variant="after" />
+            </div>
+            <div className="pointer-events-none absolute bottom-4 right-4 z-20 rounded-[var(--radius-md)] bg-green-900/90 px-3.5 py-2 text-right text-canvas backdrop-blur-sm">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-gold-400">After</p>
+              <p className="text-sm font-medium">Generating from day one</p>
             </div>
 
             {/* BEFORE (clipped overlay) */}
             <div
-              className="absolute inset-0 bg-gradient-to-br from-ink-faint to-ink-muted"
+              className="absolute inset-0"
               style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
             >
-              <div className="absolute inset-0 grid place-items-center text-canvas/70">
-                <p className="font-mono text-xs uppercase tracking-widest">Before · bare roof</p>
+              <RoofScene variant="before" />
+              <div className="pointer-events-none absolute bottom-4 left-4 rounded-[var(--radius-md)] bg-ink/85 px-3.5 py-2 text-canvas backdrop-blur-sm">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-canvas/60">Before</p>
+                <p className="text-sm font-medium">Full grid bill, every month</p>
               </div>
             </div>
 

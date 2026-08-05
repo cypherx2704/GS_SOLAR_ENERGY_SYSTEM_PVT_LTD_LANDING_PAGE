@@ -43,14 +43,7 @@ export default function SubsidyPage() {
                 {subsidy.benefits.map((b, i) => (
                   <li key={i} className="flex items-start gap-3 text-ink-muted">
                     <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-green-600" />
-                    <span>
-                      {b.text}
-                      {b.verify && (
-                        <span className="ml-2 rounded bg-gold-500/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-gold-600">
-                          verify
-                        </span>
-                      )}
-                    </span>
+                    <span>{b.text}</span>
                   </li>
                 ))}
               </ul>
@@ -63,14 +56,7 @@ export default function SubsidyPage() {
                 {subsidy.eligibility.map((b, i) => (
                   <li key={i} className="flex items-start gap-3 text-ink-muted">
                     <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-green-600" />
-                    <span>
-                      {b.text}
-                      {b.verify && (
-                        <span className="ml-2 rounded bg-gold-500/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-gold-600">
-                          verify
-                        </span>
-                      )}
-                    </span>
+                    <span>{b.text}</span>
                   </li>
                 ))}
               </ul>

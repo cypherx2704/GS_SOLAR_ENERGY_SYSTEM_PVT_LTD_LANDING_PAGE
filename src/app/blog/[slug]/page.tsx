@@ -50,20 +50,59 @@ export default async function PostPage({
             <span className="inline-flex items-center gap-1.5">
               <Clock className="size-3.5" /> {post.readingMinutes} min read
             </span>
-            {post.placeholder && (
-              <span className="rounded bg-gold-500/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-gold-600">
-                draft
-              </span>
-            )}
+            <time dateTime={post.date}>
+              {new Date(post.date).toLocaleDateString("en-IN", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
+            </time>
           </div>
 
           <Reveal>
-            <div className="prose-editorial mt-8 space-y-5 text-lg leading-relaxed text-ink-muted">
-              <p>{post.body}</p>
-              <p>
-                This article is a placeholder outline. The full piece — with practical detail,
-                India-specific figures and examples — will be published here.
-              </p>
+            <div className="prose-editorial mt-8 text-lg leading-relaxed text-ink-muted">
+              {post.body.map((block, i) => {
+                switch (block.type) {
+                  case "h2":
+                    return (
+                      <h2
+                        key={i}
+                        className="mt-12 font-display text-2xl font-semibold text-ink first:mt-0 sm:text-3xl"
+                      >
+                        {block.text}
+                      </h2>
+                    );
+                  case "ul":
+                    return (
+                      <ul key={i} className="mt-5 space-y-2.5">
+                        {block.items.map((item) => (
+                          <li key={item} className="flex gap-3">
+                            <span
+                              aria-hidden
+                              className="mt-[0.7em] size-1.5 shrink-0 rounded-full bg-gold-500"
+                            />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    );
+                  case "callout":
+                    return (
+                      <p
+                        key={i}
+                        className="mt-8 rounded-[var(--radius-md)] border-l-4 border-gold-500 bg-surface-warm px-5 py-4 text-base text-ink"
+                      >
+                        {block.text}
+                      </p>
+                    );
+                  default:
+                    return (
+                      <p key={i} className="mt-5">
+                        {block.text}
+                      </p>
+                    );
+                }
+              })}
             </div>
           </Reveal>
 

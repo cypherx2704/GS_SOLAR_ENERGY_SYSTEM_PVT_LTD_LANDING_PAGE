@@ -25,11 +25,16 @@ export const whyChooseUs: Benefit[] = [
   { title: "After-Sales Support", icon: "Headphones", description: "Responsive service and maintenance long after handover." },
 ];
 
-/** Trust chips — plain text/badge, no invented certification logos. */
-export const trustBadges: { label: string; note: string }[] = [
-  { label: "MNRE-aligned", note: "Ministry of New & Renewable Energy framework" },
-  { label: "ISO-standard practices", note: "Quality-driven processes" },
-  { label: "Approved Vendor", note: "Empanelled installation partner" },
-  { label: "Subsidy Assistance", note: "PM Surya Ghar guidance" },
-  { label: "Authorized Dealer", note: "Genuine, warranty-backed supply" },
+/**
+ * Trust chips — every one is a fact about the company or a service we actually
+ * perform, not a certification claim. Deliberately avoids "ISO certified",
+ * "MNRE empanelled" and "authorized dealer", which require documentary proof
+ * that hasn't been supplied. Add those back only against real certificates.
+ */
+export const trustBadges: { label: string; icon: string; note: string }[] = [
+  { label: "GST-registered Pvt Ltd", icon: "Landmark", note: "GST 33AALCG9719J1Z5 — verifiable on the GST portal" },
+  { label: "Free site survey", icon: "Ruler", note: "We measure and shade-analyse the roof before quoting" },
+  { label: "Subsidy paperwork handled", icon: "FileCheck2", note: "PM Surya Ghar registration and follow-through" },
+  { label: "Net-metering end-to-end", icon: "Zap", note: "DISCOM feasibility, net meter and commissioning" },
+  { label: "AMC & after-sales", icon: "Headphones", note: "Cleaning, inspection and generation monitoring" },
 ];

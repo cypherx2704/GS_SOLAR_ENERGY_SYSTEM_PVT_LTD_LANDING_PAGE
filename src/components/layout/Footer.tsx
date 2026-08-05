@@ -1,9 +1,16 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { footerNav, legalNav } from "@/content/nav";
-import { company, fullAddress, primaryPhone, telHref } from "@/content/company";
+import {
+  company,
+  fullAddress,
+  primaryPhone,
+  telHref,
+  whatsappHref,
+  activeSocials,
+} from "@/content/company";
 import { Logo } from "./Logo";
-import { NewsletterForm } from "./NewsletterForm";
+import { SocialIcon } from "./SocialIcon";
 
 export function Footer() {
   return (
@@ -28,21 +35,46 @@ export function Footer() {
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <Mail className="size-4 shrink-0 text-gold-400" />
-              <a href={`mailto:${company.email.value}`} className="hover:text-gold-400">
-                {company.email.value}
+              <MessageCircle className="size-4 shrink-0 text-gold-400" />
+              <a
+                href={whatsappHref(company.whatsapp)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gold-400"
+              >
+                WhatsApp us
               </a>
-              {company.email.placeholder && (
-                <span className="rounded bg-canvas/10 px-1.5 py-0.5 text-[10px] uppercase tracking-wide text-canvas/50">
-                  placeholder
-                </span>
-              )}
             </li>
+            {company.email && (
+              <li className="flex items-center gap-3">
+                <Mail className="size-4 shrink-0 text-gold-400" />
+                <a href={`mailto:${company.email}`} className="hover:text-gold-400">
+                  {company.email}
+                </a>
+              </li>
+            )}
             <li className="flex items-center gap-3">
               <Clock className="size-4 shrink-0 text-gold-400" />
               <span>{company.hours.weekdays}</span>
             </li>
           </ul>
+
+          {activeSocials.length > 0 && (
+            <div className="mt-6 flex gap-2.5">
+              {activeSocials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="grid size-9 place-items-center rounded-full border border-canvas/15 text-canvas/70 transition-colors hover:border-gold-400 hover:text-gold-400"
+                >
+                  <SocialIcon name={s.icon} className="size-4" />
+                </a>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Link columns */}
@@ -63,21 +95,6 @@ export function Footer() {
             </ul>
           </div>
         ))}
-      </div>
-
-      {/* Newsletter */}
-      <div className="border-t border-canvas/10">
-        <div className="container-page flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="font-display text-lg font-semibold">Solar tips & subsidy updates</p>
-            <p className="text-sm text-canvas/60">
-              Occasional, useful. No spam. (Newsletter wiring pending.)
-            </p>
-          </div>
-          <div className="w-full max-w-sm">
-            <NewsletterForm />
-          </div>
-        </div>
       </div>
 
       {/* Legal bar */}

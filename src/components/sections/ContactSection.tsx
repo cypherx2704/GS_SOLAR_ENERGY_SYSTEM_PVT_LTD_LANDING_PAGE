@@ -1,14 +1,22 @@
-import { Phone, Mail, MapPin, Clock, MessageCircle, MapPinned } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { company, fullAddress, telHref, whatsappHref } from "@/content/company";
 import { Reveal } from "@/components/animation/Reveal";
 import { SectionHeading } from "./Section";
 import { QuoteButton } from "@/components/layout/QuoteButton";
+import { OfficeMap } from "@/components/layout/OfficeMap";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-export function ContactSection() {
+/** Contact details block. `showMap={false}` where the page renders its own map. */
+export function ContactSection({ showMap = true }: { showMap?: boolean }) {
   return (
     <section id="contact" className="section-y bg-surface-warm">
-      <div className="container-page grid gap-12 lg:grid-cols-2 lg:gap-16">
+      <div
+        className={cn(
+          "container-page grid gap-12 lg:gap-16",
+          showMap && "lg:grid-cols-2",
+        )}
+      >
         {/* Details */}
         <div>
           <SectionHeading
@@ -45,20 +53,40 @@ export function ContactSection() {
 
               <li className="flex items-start gap-4">
                 <span className="mt-0.5 grid size-10 shrink-0 place-items-center rounded-[var(--radius-md)] bg-green-800/8 text-green-800">
-                  <Mail className="size-5" />
+                  <MessageCircle className="size-5" />
                 </span>
                 <div>
-                  <p className="text-sm text-ink-faint">Email</p>
-                  <a href={`mailto:${company.email.value}`} className="font-medium text-ink hover:text-green-800">
-                    {company.email.value}
-                  </a>
-                  {company.email.placeholder && (
-                    <span className="ml-2 rounded bg-line px-1.5 py-0.5 text-[10px] uppercase tracking-wide text-ink-faint">
-                      placeholder
+                  <p className="text-sm text-ink-faint">WhatsApp</p>
+                  <a
+                    href={whatsappHref(company.whatsapp)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-ink hover:text-green-800"
+                  >
+                    {company.whatsapp}{" "}
+                    <span className="text-sm font-normal text-ink-faint">
+                      — fastest for a quick question
                     </span>
-                  )}
+                  </a>
                 </div>
               </li>
+
+              {company.email && (
+                <li className="flex items-start gap-4">
+                  <span className="mt-0.5 grid size-10 shrink-0 place-items-center rounded-[var(--radius-md)] bg-green-800/8 text-green-800">
+                    <Mail className="size-5" />
+                  </span>
+                  <div>
+                    <p className="text-sm text-ink-faint">Email</p>
+                    <a
+                      href={`mailto:${company.email}`}
+                      className="font-medium text-ink hover:text-green-800"
+                    >
+                      {company.email}
+                    </a>
+                  </div>
+                </li>
+              )}
 
               <li className="flex items-start gap-4">
                 <span className="mt-0.5 grid size-10 shrink-0 place-items-center rounded-[var(--radius-md)] bg-green-800/8 text-green-800">
@@ -88,7 +116,7 @@ export function ContactSection() {
             <div className="mt-8 flex flex-wrap gap-3">
               <QuoteButton>Get Free Quote</QuoteButton>
               <Button asChild variant="outline">
-                <a href={whatsappHref(company.whatsapp.value)} target="_blank" rel="noopener noreferrer">
+                <a href={whatsappHref(company.whatsapp)} target="_blank" rel="noopener noreferrer">
                   <MessageCircle /> WhatsApp us
                 </a>
               </Button>
@@ -96,29 +124,12 @@ export function ContactSection() {
           </Reveal>
         </div>
 
-        {/* Map placeholder */}
-        <Reveal from="right">
-          <div className="relative h-full min-h-[22rem] overflow-hidden rounded-[var(--radius-lg)] border border-line bg-gradient-to-br from-green-800 to-green-900">
-            <div
-              aria-hidden
-              className="absolute inset-0 opacity-20"
-              style={{
-                backgroundImage:
-                  "linear-gradient(var(--color-canvas) 1px, transparent 1px), linear-gradient(90deg, var(--color-canvas) 1px, transparent 1px)",
-                backgroundSize: "40px 40px",
-              }}
-            />
-            <div className="absolute inset-0 grid place-items-center text-center">
-              <div>
-                <MapPinned className="mx-auto size-10 text-gold-400" />
-                <p className="mt-3 font-medium text-canvas">{company.address.city}, {company.address.state}</p>
-                <p className="mt-1 font-mono text-xs uppercase tracking-widest text-canvas/50">
-                  Google Map embed · pending
-                </p>
-              </div>
-            </div>
-          </div>
-        </Reveal>
+        {/* Office location — omitted where the page already shows a map */}
+        {showMap && (
+          <Reveal from="right">
+            <OfficeMap />
+          </Reveal>
+        )}
       </div>
     </section>
   );

@@ -1,10 +1,12 @@
 /**
  * Government subsidy guide — PM Surya Ghar: Muft Bijli Yojana (India).
  *
- * ⚠️ ACCURACY CAVEAT (PLAN §10): subsidy amounts, slab caps and portal steps
- * change over time. Every specific figure below is marked `verify: true` and
- * must be confirmed against pmsuryaghar.gov.in / MNRE / TANGEDCO (Chennai)
- * before launch. Do NOT publish figures as guaranteed without confirmation.
+ * ⚠️ ACCURACY CAVEAT: subsidy amounts, slab caps and portal steps change over
+ * time, so no rupee figure is stated anywhere on the site. `verify: true` is an
+ * INTERNAL checklist marking claims to re-confirm against pmsuryaghar.gov.in /
+ * MNRE / TANGEDCO (Chennai) before launch and at each review — it is not
+ * rendered to visitors. The `disclaimer` below is what the public sees.
+ * Do NOT publish figures as guaranteed without confirmation.
  */
 
 export type VerifiableFact = { text: string; verify?: boolean };

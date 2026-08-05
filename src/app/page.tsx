@@ -7,12 +7,8 @@ import {
   WhyChooseUs,
   Process,
   Calculator,
-  Portfolio,
   BeforeAfter,
   Industries,
-  ProductsBrands,
-  Testimonials,
-  Stats,
   SubsidyPreview,
   SolarExplainer,
   FAQ,
@@ -20,7 +16,7 @@ import {
   ContactSection,
 } from "@/components/sections";
 
-/** GS Solar — full landing experience (blueprint sections 1–21). */
+/** GS Solar — full landing experience. */
 export default function Home() {
   return (
     <>
@@ -32,12 +28,8 @@ export default function Home() {
       <WhyChooseUs />
       <Process />
       <Calculator />
-      <Portfolio />
       <BeforeAfter />
       <Industries />
-      <ProductsBrands />
-      <Testimonials />
-      <Stats />
       <SubsidyPreview />
       <SolarExplainer />
       <FAQ />

@@ -3,7 +3,7 @@ import {
   Droplets, Lightbulb, Wrench, MessageSquare, MapPin, PencilRuler, FileCheck2,
   HardHat, CircuitBoard, Activity, GraduationCap, Stethoscope, Hotel, Warehouse,
   Tractor, Store, TrendingDown, BadgeIndianRupee, ShieldCheck, Leaf, CalendarClock,
-  BadgeCheck, Landmark, Headphones, Eye, HeartHandshake, type LucideIcon,
+  BadgeCheck, Landmark, Headphones, Eye, HeartHandshake, Ruler, ReceiptText, type LucideIcon,
 } from "lucide-react";
 
 /** Registry mapping content icon-name strings → lucide components. */
@@ -12,7 +12,7 @@ const registry: Record<string, LucideIcon> = {
   Droplets, Lightbulb, Wrench, MessageSquare, MapPin, PencilRuler, FileCheck2,
   HardHat, CircuitBoard, Activity, GraduationCap, Stethoscope, Hotel, Warehouse,
   Tractor, Store, TrendingDown, BadgeIndianRupee, ShieldCheck, Leaf, CalendarClock,
-  BadgeCheck, Landmark, Headphones, Eye, HeartHandshake,
+  BadgeCheck, Landmark, Headphones, Eye, HeartHandshake, Ruler, ReceiptText,
 };
 
 export function Icon({

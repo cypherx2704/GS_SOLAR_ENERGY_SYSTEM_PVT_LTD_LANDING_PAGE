@@ -1,7 +1,7 @@
-import { ShieldCheck } from "lucide-react";
 import { trustBadges } from "@/content/benefits";
+import { Icon } from "@/components/Icon";
 
-/** Trust strip — text/badge chips (no invented logos, PLAN §6 #3). */
+/** Trust strip — text/badge chips stating verifiable facts, no invented logos. */
 export function TrustStrip() {
   return (
     <div className="border-y border-line bg-surface-warm/60">
@@ -12,7 +12,7 @@ export function TrustStrip() {
             title={b.note}
             className="inline-flex items-center gap-2 text-sm font-medium text-ink-muted"
           >
-            <ShieldCheck className="size-4 text-green-600" />
+            <Icon name={b.icon} className="size-4 text-green-600" />
             {b.label}
           </span>
         ))}

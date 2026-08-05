@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Phone } from "lucide-react";
+import { Phone, Quote } from "lucide-react";
 import { about } from "@/content/about";
 import { leadership, company, telHref } from "@/content/company";
 import { Icon } from "@/components/Icon";
@@ -28,22 +28,55 @@ export default function AboutPage() {
 
       {/* Story + founder */}
       <Section tone="canvas">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <Reveal from="left">
             <div>
               <p className="eyebrow">Our Story</p>
-              <PlaceholderNote show={about.story.placeholder} />
-              <p className="mt-4 text-lg leading-relaxed text-ink-muted">{about.story.text}</p>
+              <div className="mt-4 space-y-4 text-lg leading-relaxed text-ink-muted">
+                {about.story.text.split("\n\n").map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
             </div>
           </Reveal>
           <Reveal from="right">
             <div className="rounded-[var(--radius-lg)] border border-line bg-surface-warm/50 p-7">
-              <p className="eyebrow">Founder&apos;s Message</p>
-              <PlaceholderNote show={about.founderMessage.placeholder} />
-              <p className="mt-4 leading-relaxed text-ink-muted">{about.founderMessage.text}</p>
+              <Quote className="size-8 text-gold-500" />
+              <p className="eyebrow mt-4">A Note From Our Leadership</p>
+              <div className="mt-4 space-y-3.5 leading-relaxed text-ink-muted">
+                {about.founderMessage.text.split("\n\n").map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+              <p className="mt-5 border-t border-line pt-4 font-medium text-ink">
+                {about.founderMessage.attribution}
+              </p>
             </div>
           </Reveal>
         </div>
+      </Section>
+
+      {/* How we work */}
+      <Section tone="warm">
+        <SectionHeading
+          eyebrow="How We Work"
+          title="What you can hold us"
+          accent="to."
+          align="center"
+        />
+        <RevealGroup className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {about.commitments.map((c) => (
+            <RevealItem key={c.title}>
+              <div className="h-full rounded-[var(--radius-lg)] border border-line bg-surface p-6">
+                <div className="grid size-11 place-items-center rounded-[var(--radius-md)] bg-gold-500/15 text-gold-600">
+                  <Icon name={c.icon} className="size-5" />
+                </div>
+                <h3 className="mt-4 font-display text-lg font-semibold text-ink">{c.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-ink-muted">{c.description}</p>
+              </div>
+            </RevealItem>
+          ))}
+        </RevealGroup>
       </Section>
 
       {/* Mission / Vision */}
@@ -83,7 +116,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Leadership */}
-      <Section tone="warm">
+      <Section tone="canvas">
         <SectionHeading
           eyebrow="Leadership"
           title="The people behind"
@@ -136,37 +169,7 @@ export default function AboutPage() {
         </p>
       </Section>
 
-      {/* Timeline */}
-      <Section tone="canvas">
-        <SectionHeading eyebrow="Our Journey" title="Milestones" accent="so far." />
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
-          {about.timeline.map((t, i) => (
-            <Reveal key={i} delay={i * 0.1}>
-              <div className="rounded-[var(--radius-lg)] border border-line bg-surface p-6">
-                <p className="font-mono text-3xl font-semibold text-gold-600">{t.year}</p>
-                <h3 className="mt-2 font-display text-lg font-semibold text-ink">{t.title}</h3>
-                <p className="mt-1.5 text-sm text-ink-muted">{t.text}</p>
-                {t.placeholder && (
-                  <span className="mt-3 inline-block rounded bg-line px-2 py-0.5 text-[10px] uppercase tracking-wide text-ink-faint">
-                    placeholder
-                  </span>
-                )}
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
       <CTA />
     </>
-  );
-}
-
-function PlaceholderNote({ show }: { show?: boolean }) {
-  if (!show) return null;
-  return (
-    <span className="ml-2 inline-block rounded bg-gold-500/20 px-1.5 py-0.5 align-middle text-[10px] font-semibold uppercase tracking-wide text-gold-600">
-      placeholder
-    </span>
   );
 }

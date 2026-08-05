@@ -197,6 +197,13 @@ body {
   }
 }
 
+/* Gold energy pulse travelling array → inverter in the before/after scene. */
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
 /* ==========================================================================
    Reduced motion — accessibility-first (PLAN §12)
    ========================================================================== */

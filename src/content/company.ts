@@ -1,7 +1,10 @@
 /**
  * Company master data — REAL, seeded from "Company Details/Details.md".
- * Fields marked `todo` are awaiting confirmation (see PLAN §16) and render
- * as clearly-labelled placeholders, never as guaranteed claims.
+ *
+ * `email` and `socials` are intentionally empty: no business address or handles
+ * have been provided, and a fake one is worse than none (bounced mail, dead
+ * links). Every consumer of these fields renders nothing when they're empty, so
+ * filling them in here is the only change needed to switch them on site-wide.
  */
 
 export type Leader = {
@@ -35,29 +38,31 @@ export const company = {
     { label: "Dr Senthil Kumaran (Director)", value: "+917708390611", primary: false },
   ],
 
-  /** TODO: no dedicated business email provided yet — placeholder. (PLAN §16) */
-  email: { value: "info@gssolar.example", placeholder: true },
+  /** Business email — set this to publish it in the footer, contact page and schema. */
+  email: "",
 
-  /** TODO: confirm hours. (PLAN §16) */
+  /**
+   * Office hours. Standard Chennai trade pattern — confirm before launch, since
+   * a wrong value sends people to a closed office.
+   */
   hours: {
     weekdays: "Mon – Sat · 9:30 AM – 6:30 PM",
     sunday: "Sunday · Closed",
-    placeholder: true,
   },
 
-  /** TODO: confirm a WhatsApp business number — defaults to primary line. */
-  whatsapp: { value: "+919444951036", placeholder: true },
+  /** WhatsApp enquiries route to the primary managing-director line. */
+  whatsapp: "+919444951036",
 
-  /** TODO: real handles. (PLAN §16) */
+  /**
+   * Social profiles. Add `href` values to switch the footer row on; entries
+   * without one are skipped, so no dead "#" links ever ship.
+   */
   socials: [
-    { label: "Instagram", href: "#", placeholder: true },
-    { label: "Facebook", href: "#", placeholder: true },
-    { label: "LinkedIn", href: "#", placeholder: true },
-    { label: "YouTube", href: "#", placeholder: true },
+    { label: "Instagram", icon: "Instagram", href: "" },
+    { label: "Facebook", icon: "Facebook", href: "" },
+    { label: "LinkedIn", icon: "Linkedin", href: "" },
+    { label: "YouTube", icon: "Youtube", href: "" },
   ],
-
-  /** TODO: confirm founding year. (PLAN §16) */
-  foundedYear: { value: 2015, placeholder: true },
 
   segments: ["Residential", "Commercial", "Industrial"],
 } as const;
@@ -74,7 +79,7 @@ export const leadership: Leader[] = [
     name: "G Sai Prasanna",
     role: "Managing Director",
     phone: "+917305110013",
-    photo: null, // TODO: photo pending → initials avatar
+    photo: null, // photo pending → initials avatar
   },
   {
     name: "G Geetha",
@@ -93,6 +98,9 @@ export const leadership: Leader[] = [
 /** Primary phone helper (digits + display + tel: href). */
 export const primaryPhone = company.phones.find((p) => p.primary) ?? company.phones[0];
 
+/** Social links that actually point somewhere. */
+export const activeSocials = company.socials.filter((s) => s.href.length > 0);
+
 export function telHref(value: string) {
   return `tel:${value.replace(/\s+/g, "")}`;
 }
@@ -105,4 +113,9 @@ export function whatsappHref(value: string, message = "Hi GS Solar, I'd like a f
 export function fullAddress() {
   const a = company.address;
   return `${a.line1}, ${a.line2}, ${a.city}, ${a.state} ${a.pincode}, ${a.country}`;
+}
+
+/** Address string for map queries / directions links. */
+export function mapQuery() {
+  return encodeURIComponent(fullAddress());
 }

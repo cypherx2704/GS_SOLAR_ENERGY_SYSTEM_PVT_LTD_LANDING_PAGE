@@ -17,7 +17,7 @@ export default function BlogPage() {
         eyebrow="Blog"
         title="Solar, made"
         accent="simple."
-        description="Guides, subsidy explainers and practical tips. Full articles are on the way — the posts below are outlines."
+        description="Guides, subsidy explainers and practical tips — written for homes and businesses going solar in Tamil Nadu."
         crumbs={[{ label: "Home", href: "/" }, { label: "Blog" }]}
       />
 
@@ -46,6 +46,13 @@ export default function BlogPage() {
                     <div className="mt-4 flex items-center justify-between text-xs text-ink-faint">
                       <span className="inline-flex items-center gap-1.5">
                         <Clock className="size-3.5" /> {p.readingMinutes} min read
+                        <span aria-hidden>·</span>
+                        <time dateTime={p.date}>
+                          {new Date(p.date).toLocaleDateString("en-IN", {
+                            month: "short",
+                            year: "numeric",
+                          })}
+                        </time>
                       </span>
                       <ArrowUpRight className="size-4 text-ink-faint transition-colors group-hover:text-green-800" />
                     </div>

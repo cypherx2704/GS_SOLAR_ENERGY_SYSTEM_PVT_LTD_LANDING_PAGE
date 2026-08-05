@@ -2,18 +2,28 @@
 
 import * as React from "react";
 import dynamic from "next/dynamic";
-import { PhoneCall, Sparkles } from "lucide-react";
+import { PhoneCall, Sparkles, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { QuoteButton } from "@/components/layout/QuoteButton";
 import { MagneticButton } from "@/components/animation/MagneticButton";
 import { useReducedMotion } from "@/lib/hooks/useReducedMotion";
 import { primaryPhone, telHref, company } from "@/content/company";
-import { heroStats } from "@/content/stats";
 
 const HeroScene = dynamic(() => import("@/components/three/HeroScene"), {
   ssr: false,
   loading: () => <StaticHeroVisual pending />,
 });
+
+/**
+ * What the customer gets — true independent of project counts, and deliberately
+ * distinct from the TrustStrip directly below, which covers what we do operationally.
+ */
+const heroHighlights = [
+  "Itemised, comparable quotes",
+  "On-grid, hybrid & off-grid",
+  "25-year design life",
+  "Chennai & across Tamil Nadu",
+];
 
 /** Cheap WebGL capability probe so we never mount a canvas that can't paint. */
 function webglSupported(): boolean {
@@ -97,17 +107,15 @@ export function Hero() {
             </Button>
           </div>
 
-          <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-6 opacity-0 [animation:fadeUp_0.8s_var(--ease-out-soft)_0.65s_forwards] sm:grid-cols-4">
-            {heroStats.map((s) => (
-              <div key={s.label}>
-                <dt className="font-display text-3xl font-semibold text-green-800">
-                  {s.value}
-                  <span className="text-gold-600">{s.suffix}</span>
-                </dt>
-                <dd className="mt-0.5 text-xs text-ink-faint">{s.label}</dd>
-              </div>
+          {/* What we actually do — no unverifiable counts, just the offering. */}
+          <ul className="mt-12 flex flex-wrap gap-x-6 gap-y-3 opacity-0 [animation:fadeUp_0.8s_var(--ease-out-soft)_0.65s_forwards]">
+            {heroHighlights.map((h) => (
+              <li key={h} className="inline-flex items-center gap-2 text-sm text-ink-muted">
+                <Check className="size-4 shrink-0 text-green-600" />
+                {h}
+              </li>
             ))}
-          </dl>
+          </ul>
         </div>
 
         {/* Right — WebGL hero (falls back to static under reduced motion) */}
